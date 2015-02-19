@@ -1,0 +1,182 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" 
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp" >
+
+        <FrameLayout
+            android:id="@+id/imageFrame"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" >
+
+            
+            <ImageView
+                android:id="@+id/productIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/product_image"
+                android:scaleType="fitXY" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </FrameLayout>
+
+        <com.adobe.customviews.TextAwesome
+            android:id="@+id/productName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageFrame"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageFrame"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <com.adobe.customviews.TextAwesome
+            android:id="@+id/ratingTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ratingIv"
+            android:layout_alignBottom="@+id/imageFrame"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/ratingIv"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <com.adobe.customviews.TextAwesome
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageFrame"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/list_item_background"
+            android:padding="16dp" />
+
+        <RelativeLayout
+            android:id="@+id/detailRl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/list_item_background"
+            android:padding="16dp" >
+
+            <com.adobe.customviews.TextAwesome
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="8dp"
+                android:text="@string/type"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <com.adobe.customviews.TextAwesome
+                android:id="@+id/appType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/type"
+                android:layout_toRightOf="@id/type"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold" />
+
+            <com.adobe.customviews.TextAwesome
+                android:id="@+id/inApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/appType"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/in_app_purchase"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <com.adobe.customviews.TextAwesome
+                android:id="@+id/inAppPurchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/appType"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@+id/inApp"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold" />
+
+            <com.adobe.customviews.TextAwesome
+                android:id="@+id/updated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inAppPurchase"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/last_updated"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+            <com.adobe.customviews.TextAwesome
+                android:id="@+id/lastUpdated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/inAppPurchase"
+                android:layout_marginTop="24dp"
+                android:layout_toRightOf="@id/updated"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <com.adobe.customviews.ButtonAwesome
+            android:id="@+id/appStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/detailRl"
+            android:background="@drawable/button_background"
+            android:padding="10dp"
+            android:text="@string/app_store"
+            android:textColor="#ffffff" />
+
+        <com.adobe.customviews.ButtonAwesome
+            android:id="@+id/sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/detailRl"
+            android:background="@drawable/button_background"
+            android:padding="10dp"
+            android:text="@string/send_sms"
+            android:textColor="#ffffff" />
+
+        <ImageView
+            android:id="@+id/ratingIv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@+id/imageFrame"
+            android:layout_alignLeft="@+id/productName"
+            android:src="@drawable/rating" />
+    </RelativeLayout>
+
+</ScrollView>
